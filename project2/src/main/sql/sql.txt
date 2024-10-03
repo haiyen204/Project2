@@ -1,0 +1,21 @@
+CREATE DATABASE project2;
+USE project2;
+
+CREATE TABLE Accounts (
+    id int auto_increment primary key,
+    name varchar(50),
+    password varchar(100),
+    repeat_password varchar(100),
+    email varchar(100),
+    phone varchar(13)
+);
+
+INSERT INTO Accounts (name, password, repeat_password, email, phone)
+VALUES
+('John Doe', 'password123', 'password123', 'johndoe@example.com', '1234567890123'),
+('Jane Smith', 'mysecurepass', 'mysecurepass', 'janesmith@example.com', '0987654321123'),
+('Michael Johnson', 'mypass456', 'mypass456', 'michael.johnson@example.com', '1122334455667'),
+('Emily Davis', 'qwerty123', 'qwerty123', 'emily.davis@example.com', '9876543210123'),
+('David Brown', 'abcde789', 'abcde789', 'david.brown@example.com', '0011223344556');
+
+SELECT * FROM Accounts;
