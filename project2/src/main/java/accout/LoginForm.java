@@ -15,7 +15,7 @@ public class LoginForm extends Application {
         // Tạo các thành phần giao diện
 
         // Thay thế logo bằng ảnh
-        Image logoImage = new Image("D:\\project2\\src\\main\\java\\Image");
+        Image logoImage = new Image("D:\\project2\\project2\\src\\main\\java\\Image");
         ImageView logoImageView = new ImageView(logoImage);
         logoImageView.setFitWidth(150);  // Đặt kích thước chiều rộng của ảnh
         logoImageView.setFitHeight(100); // Đặt kích thước chiều cao của ảnh

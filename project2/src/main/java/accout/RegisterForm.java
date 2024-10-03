@@ -13,7 +13,7 @@ public class RegisterForm extends Application {
     @Override
     public void start(Stage primaryStage) {
         // Thêm hình ảnh logo (nếu cần)
-        Image logoImage = new Image("D:\\project2\\src\\main\\java\\Image");
+        Image logoImage = new Image("D:\\project2\\project2\\src\\main\\java\\Image");
         ImageView logoImageView = new ImageView(logoImage);
         logoImageView.setFitWidth(150);  // Đặt chiều rộng ảnh
         logoImageView.setFitHeight(100); // Đặt chiều cao ảnh
