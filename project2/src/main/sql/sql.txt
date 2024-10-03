@@ -12,10 +12,10 @@ CREATE TABLE Accounts (
 
 INSERT INTO Accounts (name, password, repeat_password, email, phone)
 VALUES
-('John Doe', 'password123', 'password123', 'johndoe@example.com', '1234567890123'),
-('Jane Smith', 'mysecurepass', 'mysecurepass', 'janesmith@example.com', '0987654321123'),
-('Michael Johnson', 'mypass456', 'mypass456', 'michael.johnson@example.com', '1122334455667'),
-('Emily Davis', 'qwerty123', 'qwerty123', 'emily.davis@example.com', '9876543210123'),
-('David Brown', 'abcde789', 'abcde789', 'david.brown@example.com', '0011223344556');
+('John Doe', 'password123', 'password123', 'johndoe@example.com', '0964243465'),
+('Jane Smith', 'mysecurepass', 'mysecurepass', 'janesmith@example.com', '0975676487'),
+('Michael Johnson', 'mypass456', 'mypass456', 'michael.johnson@example.com', '0975453432'),
+('Emily Davis', 'qwerty123', 'qwerty123', 'emily.davis@example.com', '0956453447'),
+('David Brown', 'abcde789', 'abcde789', 'david.brown@example.com', '0976654366');
 
 SELECT * FROM Accounts;
