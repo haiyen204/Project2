@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project_javafx.MyController">
+    <left>
+        <HBox prefHeight="600.0" prefWidth="250.0" BorderPane.alignment="CENTER">
+            <children>
+                <GridPane prefHeight="550.0" prefWidth="300.0">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="60.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="0.0" prefHeight="10.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                    <children>
+                        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="2">
+                            <children>
+                                <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#switchToStaff" prefHeight="200.0" prefWidth="300.0" text="   Staff">
+                                    <graphic>
+                                        <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@img/staff.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                    <padding>
+                                        <Insets left="50.0" />
+                                    </padding>
+                                    <HBox.margin>
+                                        <Insets />
+                                    </HBox.margin>
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font></Button>
+                            </children>
+                        </HBox>
+                        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="3">
+                            <children>
+                                <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#switchToCustomer" prefHeight="200.0" prefWidth="300.0" text="   Customer">
+                                    <graphic>
+                                        <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@img/user.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                    <padding>
+                                        <Insets left="50.0" />
+                                    </padding>
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                                </Button>
+                            </children>
+                        </HBox>
+                        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="4">
+                            <children>
+                                <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#switchToMenu" prefHeight="200.0" prefWidth="300.0" text="   Menu">
+                                    <graphic>
+                                        <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@img/menu.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                    <padding>
+                                        <Insets left="50.0" />
+                                    </padding>
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                                </Button>
+                            </children>
+                        </HBox>
+                        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="5">
+                            <children>
+                                <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#switchToOrder" prefHeight="200.0" prefWidth="300.0" text="   Order">
+                                    <graphic>
+                                        <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@img/order.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                    <padding>
+                                        <Insets left="50.0" />
+                                    </padding>
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                                </Button>
+                            </children>
+                        </HBox>
+                        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="6">
+                            <children>
+                                <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#switchToBill" prefHeight="200.0" prefWidth="300.0" text="   Bill">
+                                    <graphic>
+                                        <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@img/bill.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                    <padding>
+                                        <Insets left="50.0" />
+                                    </padding>
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                                </Button>
+                            </children>
+                        </HBox>
+                        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="7">
+                            <children>
+                                <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#switchToInventory" prefHeight="200.0" prefWidth="300.0" text="   Inventory">
+                                    <graphic>
+                                        <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@img/inventory.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                    <padding>
+                                        <Insets left="50.0" />
+                                    </padding>
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                                </Button>
+                            </children>
+                        </HBox>
+                        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="8">
+                            <children>
+                                <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#switchToReservation" prefHeight="200.0" prefWidth="300.0" text="   Reservation">
+                                    <graphic>
+                                        <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@img/reservation.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                    <padding>
+                                        <Insets left="50.0" />
+                                    </padding>
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                                </Button>
+                            </children>
+                        </HBox>
+                        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="9">
+                            <children>
+                                <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#switchToReview" prefHeight="200.0" prefWidth="300.0" text="   Review">
+                                    <graphic>
+                                        <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@img/review.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                    <padding>
+                                        <Insets left="50.0" />
+                                    </padding>
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                                </Button>
+                            </children>
+                        </HBox>
+                        <HBox prefHeight="100.0" prefWidth="200.0">
+                            <children>
+                                <VBox alignment="CENTER_RIGHT" prefHeight="200.0" prefWidth="100.0">
+                                    <children>
+                                        <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@img/admin.png" />
+                                            </image>
+                                        </ImageView>
+                                    </children>
+                                    <padding>
+                                        <Insets right="5.0" />
+                                    </padding>
+                                </VBox>
+                                <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                                    <children>
+                                        <Label prefHeight="27.0" prefWidth="90.0" text="Admin">
+                                            <font>
+                                                <Font size="18.0" />
+                                            </font>
+                                        </Label>
+                                    </children>
+                                    <padding>
+                                        <Insets top="5.0" />
+                                    </padding>
+                                </VBox>
+                            </children>
+                            <padding>
+                                <Insets top="20.0" />
+                            </padding>
+                        </HBox>
+                        <Line endX="100.0" startX="-100.0" strokeWidth="2.0" GridPane.rowIndex="1" />
+                    </children>
+                    <HBox.margin>
+                        <Insets bottom="100.0" left="50.0" />
+                    </HBox.margin>
+                </GridPane>
+            </children>
+        </HBox>
+    </left>
+    <center>
+        <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <top>
+                <Label text="Bill" BorderPane.alignment="CENTER">
+                    <font>
+                        <Font name="System Bold" size="48.0" />
+                    </font>
+                </Label>
+            </top>
+            <BorderPane.margin>
+                <Insets left="50.0" />
+            </BorderPane.margin>
+        </BorderPane>
+    </center>
+</BorderPane>
