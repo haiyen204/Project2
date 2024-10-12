@@ -25,7 +25,9 @@
 }
 
 .menu-item {
+    -fx-alignment: CENTER;
     -fx-pref-width: 200px;
+    -fx-pref-height: 35px;
     -fx-font-size: 14px;
 }
 

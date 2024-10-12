@@ -18,7 +18,6 @@ public class Home extends Application{
 
     @Override
     public void start(Stage stage) throws IOException {
-        //xong menu, order
         FXMLLoader fxmlLoader = new FXMLLoader(Home.class.getResource("menu.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());

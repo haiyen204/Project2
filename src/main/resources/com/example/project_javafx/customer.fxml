@@ -15,6 +15,8 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project_javafx.MyController">
     <left>
         <HBox prefHeight="600.0" prefWidth="250.0" BorderPane.alignment="CENTER">
@@ -78,7 +80,12 @@
                         </HBox>
                         <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="4">
                             <children>
-                                <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#switchToMenu" prefHeight="200.0" prefWidth="300.0" text="   Menu">
+                                <MenuButton fx:id="menuButton" alignment="CENTER" mnemonicParsing="false" prefHeight="200.0" prefWidth="300.0" text="    Menu">
+                                    <items>
+                                        <MenuItem mnemonicParsing="false" onAction="#switchToFood" text="Food" />
+                                        <MenuItem mnemonicParsing="false" onAction="#switchToDrink" text="Drink" />
+
+                                    </items>
                                     <graphic>
                                         <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
                                             <image>
@@ -86,13 +93,13 @@
                                             </image>
                                         </ImageView>
                                     </graphic>
-                                    <padding>
-                                        <Insets left="50.0" />
-                                    </padding>
                                     <font>
                                         <Font size="14.0" />
                                     </font>
-                                </Button>
+                                    <padding>
+                                        <Insets left="6.0" />
+                                    </padding>
+                                </MenuButton>
                             </children>
                         </HBox>
                         <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="5">

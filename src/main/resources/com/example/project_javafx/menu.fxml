@@ -79,10 +79,11 @@
                   </HBox>
                   <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="4">
                      <children>
-                        <MenuButton alignment="CENTER" mnemonicParsing="false" prefHeight="200.0" prefWidth="300.0" text="   Menu">
+                        <MenuButton fx:id="menuButton" alignment="CENTER" mnemonicParsing="false" prefHeight="200.0" prefWidth="300.0" text="    Menu">
                           <items>
-                            <MenuItem onAction="#switchToFood" mnemonicParsing="false" text="Food" />
-                            <MenuItem onAction="#switchToDrink" mnemonicParsing="false" text="Drink" />
+                            <MenuItem mnemonicParsing="false" onAction="#switchToFood" text="Food" />
+                            <MenuItem mnemonicParsing="false" onAction="#switchToDrink" text="Drink" />
+
                           </items>
                            <graphic>
                               <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
@@ -94,6 +95,9 @@
                            <font>
                               <Font size="14.0" />
                            </font>
+                           <padding>
+                              <Insets left="6.0" />
+                           </padding>
                         </MenuButton>
                      </children>
                   </HBox>

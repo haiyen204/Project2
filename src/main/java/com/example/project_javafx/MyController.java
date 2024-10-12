@@ -5,7 +5,9 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.MenuButton;
 import javafx.scene.control.MenuItem;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import javafx.event.ActionEvent;
 import java.io.IOException;
@@ -15,6 +17,58 @@ public class MyController {
     private Stage stage;
     private Scene scene;
     private Parent root;
+
+    @FXML
+    private MenuButton menuButton;
+    private boolean hoveringMenu = false;
+    private boolean hoveringItem = false;
+
+    public void initialize() {
+        if (menuButton != null) {
+            // Hiển thị menu khi hover vào menuButton
+            menuButton.addEventHandler(MouseEvent.MOUSE_ENTERED, e -> {
+                hoveringMenu = true;
+                menuButton.show(); // Đảm bảo menu hiển thị
+            });
+
+            menuButton.addEventHandler(MouseEvent.MOUSE_EXITED, e -> {
+                // Ẩn menu chỉ khi không hover vào cả menu button và bất kỳ menu item nào
+                if (!hoveringItem && !hoveringMenu) {
+                    menuButton.hide();
+                    hoveringMenu = false;
+                }
+            });
+
+
+            // Thêm sự kiện cho từng menu item
+            for (MenuItem item : menuButton.getItems()) {
+                item.addEventHandler(MouseEvent.MOUSE_ENTERED, e -> {
+                    hoveringItem = true; // Đặt flag khi hover vào menu item
+                });
+
+                item.addEventHandler(MouseEvent.MOUSE_EXITED, e -> {
+                    hoveringItem = false; // Reset flag khi ra khỏi menu item
+                });
+            }
+
+            // Thêm sự kiện click cho các menu item
+            for (MenuItem item : menuButton.getItems()) {
+                item.setOnAction(event -> {
+                    try {
+                        if (item.getText().equals("Food")) {
+                            switchToFood(event);
+                        } else if (item.getText().equals("Drink")) {
+                            switchToDrink(event);
+                        }
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                });
+            }
+        } else {
+            System.out.println("menuButton is null. Please check the FXML file.");
+        }
+    }
 
     public void switchToStaff(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("staff.fxml"));
