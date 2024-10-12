@@ -3,7 +3,8 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
@@ -15,7 +16,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project_javafx.MyController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project_javafx.MyController">
     <left>
         <HBox prefHeight="600.0" prefWidth="250.0" BorderPane.alignment="CENTER">
             <children>
@@ -78,7 +79,11 @@
                         </HBox>
                         <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="4">
                             <children>
-                                <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#switchToMenu" prefHeight="200.0" prefWidth="300.0" text="   Menu">
+                                <MenuButton alignment="CENTER" mnemonicParsing="false" prefHeight="200.0" prefWidth="300.0" text="   Menu">
+                                    <items>
+                                        <MenuItem mnemonicParsing="false" onAction="#switchToFood" text="Food" />
+                                        <MenuItem mnemonicParsing="false" onAction="#switchToDrink" text="Drink" />
+                                    </items>
                                     <graphic>
                                         <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
                                             <image>
@@ -86,13 +91,10 @@
                                             </image>
                                         </ImageView>
                                     </graphic>
-                                    <padding>
-                                        <Insets left="50.0" />
-                                    </padding>
                                     <font>
                                         <Font size="14.0" />
                                     </font>
-                                </Button>
+                                </MenuButton>
                             </children>
                         </HBox>
                         <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="5">
@@ -233,255 +235,154 @@
     <center>
         <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
             <top>
-                <Label text="Review" BorderPane.alignment="CENTER">
+                <Label text="Food" BorderPane.alignment="CENTER">
                     <font>
                         <Font name="System Bold" size="48.0" />
                     </font>
                 </Label>
             </top>
+            <center>
+                <GridPane BorderPane.alignment="CENTER">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                    <children>
+                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                            <children>
+                                <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0">
+                                    <graphic>
+                                        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@menu_img/chicken.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                </Button>
+                            </children>
+                        </VBox>
+                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1">
+                            <children>
+                                <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0">
+                                    <graphic>
+                                        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@menu_img/chicken.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                </Button>
+                            </children>
+                        </VBox>
+                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="1">
+                            <children>
+                                <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0">
+                                    <graphic>
+                                        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@menu_img/chicken.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                </Button>
+                            </children>
+                        </VBox>
+                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                            <children>
+                                <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0">
+                                    <graphic>
+                                        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@menu_img/chicken.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                </Button>
+                            </children>
+                        </VBox>
+                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="2">
+                            <children>
+                                <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0">
+                                    <graphic>
+                                        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@menu_img/chicken.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                </Button>
+                            </children>
+                        </VBox>
+                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                            <children>
+                                <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0">
+                                    <graphic>
+                                        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@menu_img/chicken.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                </Button>
+                            </children>
+                        </VBox>
+                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="2">
+                            <children>
+                                <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0">
+                                    <graphic>
+                                        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@menu_img/chicken.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                </Button>
+                            </children>
+                        </VBox>
+                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                            <children>
+                                <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0">
+                                    <graphic>
+                                        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@menu_img/chicken.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                </Button>
+                            </children>
+                        </VBox>
+                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                            <children>
+                                <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0">
+                                    <graphic>
+                                        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@menu_img/chicken.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                </Button>
+                            </children>
+                        </VBox>
+                    </children>
+                    <BorderPane.margin>
+                        <Insets top="20.0" />
+                    </BorderPane.margin>
+                </GridPane>
+            </center>
             <BorderPane.margin>
                 <Insets left="50.0" />
             </BorderPane.margin>
-         <center>
-            <GridPane BorderPane.alignment="CENTER">
-              <columnConstraints>
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-              </columnConstraints>
-              <rowConstraints>
-                  <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
-                <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
-                  <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
-                  <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
-                  <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
-                <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="55.0" vgrow="SOMETIMES" />
-                  <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="60.0" vgrow="SOMETIMES" />
-                  <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
-                  <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="60.0" vgrow="SOMETIMES" />
-                  <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
-                  <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="60.0" vgrow="SOMETIMES" />
-                <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
-              </rowConstraints>
-               <children>
-                  <VBox prefHeight="200.0" prefWidth="100.0">
-                     <children>
-                        <Label text="Customer information:">
-                           <font>
-                              <Font name="System Bold" size="24.0" />
-                           </font>
-                        </Label>
-                     </children>
-                  </VBox>
-                  <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="1">
-                     <children>
-                        <VBox prefHeight="200.0" prefWidth="90.0">
-                           <children>
-                              <Label text="Name:">
-                                 <font>
-                                    <Font size="18.0" />
-                                 </font>
-                              </Label>
-                           </children>
-                        </VBox>
-                        <VBox prefHeight="77.0" prefWidth="300.0">
-                           <children>
-                              <Label text="Nguyen Van A">
-                                 <font>
-                                    <Font size="18.0" />
-                                 </font>
-                              </Label>
-                           </children>
-                        </VBox>
-                     </children>
-                  </HBox>
-                  <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="2">
-                     <children>
-                        <VBox prefHeight="200.0" prefWidth="90.0">
-                           <children>
-                              <Label text="Phone:">
-                                 <font>
-                                    <Font size="18.0" />
-                                 </font>
-                              </Label>
-                           </children>
-                        </VBox>
-                        <VBox prefHeight="200.0" prefWidth="300.0">
-                           <children>
-                              <Label text="anguyenvan@gmail.com">
-                                 <font>
-                                    <Font size="18.0" />
-                                 </font>
-                              </Label>
-                           </children>
-                        </VBox>
-                     </children>
-                  </HBox>
-                  <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="3">
-                     <children>
-                        <VBox prefHeight="200.0" prefWidth="90.0">
-                           <children>
-                              <Label text="Email:">
-                                 <font>
-                                    <Font size="18.0" />
-                                 </font>
-                              </Label>
-                           </children>
-                        </VBox>
-                        <VBox prefHeight="200.0" prefWidth="300.0">
-                           <children>
-                              <Label text="091111222">
-                                 <font>
-                                    <Font size="18.0" />
-                                 </font>
-                              </Label>
-                           </children>
-                        </VBox>
-                     </children>
-                  </HBox>
-                  <VBox alignment="BOTTOM_LEFT" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="4">
-                     <children>
-                        <Label text="Restaurant reviews:">
-                           <font>
-                              <Font name="System Bold" size="24.0" />
-                           </font>
-                        </Label>
-                     </children>
-                  </VBox>
-                  <VBox prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="5">
-                     <children>
-                        <Label text="Your review about the food, restaurant, and staff:">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                        </Label>
-                     </children>
-                     <padding>
-                        <Insets top="10.0" />
-                     </padding>
-                  </VBox>
-                  <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="6">
-                     <children>
-                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="50.0">
-                           <children>
-                              <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@img/user.png" />
-                                 </image>
-                              </ImageView>
-                           </children>
-                        </VBox>
-                        <VBox alignment="CENTER" prefHeight="30.0" prefWidth="220.0">
-                           <children>
-                              <TextArea prefHeight="200.0" prefWidth="200.0" promptText="Comment" wrapText="true">
-                                 <font>
-                                    <Font size="14.0" />
-                                 </font>
-                              </TextArea>
-                           </children>
-                        </VBox>
-                     </children>
-                  </HBox>
-                  <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="7">
-                     <children>
-                        <VBox prefHeight="200.0" prefWidth="50.0" />
-                        <VBox prefHeight="200.0" prefWidth="100.0">
-                           <children>
-                              <Label text="Rating:">
-                                 <font>
-                                    <Font size="14.0" />
-                                 </font></Label>
-                           </children>
-                           <padding>
-                              <Insets top="1.0" />
-                           </padding>
-                        </VBox>
-                     </children>
-                  </HBox>
-                  <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="8">
-                     <children>
-                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="50.0">
-                           <children>
-                              <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@img/user.png" />
-                                 </image>
-                              </ImageView>
-                           </children>
-                        </VBox>
-                        <VBox alignment="CENTER" prefHeight="30.0" prefWidth="220.0" style="-fx-background-color: rgb(232, 232, 232);">
-                           <children>
-                              <Label text="I feel the restaurant, food and staff are wonderful" wrapText="true">
-                                 <font>
-                                    <Font size="14.0" />
-                                 </font>
-                                 <padding>
-                                    <Insets left="10.0" right="10.0" />
-                                 </padding></Label>
-                           </children>
-                        </VBox>
-                     </children>
-                  </HBox>
-                  <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="9">
-                     <children>
-                        <VBox prefHeight="200.0" prefWidth="50.0" />
-                        <VBox prefHeight="200.0" prefWidth="100.0">
-                           <children>
-                              <Label text="Rating:">
-                                 <font>
-                                    <Font size="14.0" />
-                                 </font></Label>
-                           </children>
-                           <padding>
-                              <Insets top="1.0" />
-                           </padding>
-                        </VBox>
-                     </children>
-                  </HBox>
-                  <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="10">
-                     <children>
-                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="50.0">
-                           <children>
-                              <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@img/user.png" />
-                                 </image>
-                              </ImageView>
-                           </children>
-                        </VBox>
-                        <VBox alignment="CENTER" prefHeight="30.0" prefWidth="220.0" style="-fx-background-color: rgb(232, 232, 232);">
-                           <children>
-                              <Label text="The food here is very delicious,  I will come back to support" wrapText="true">
-                                 <font>
-                                    <Font size="14.0" />
-                                 </font>
-                                 <padding>
-                                    <Insets left="10.0" right="10.0" />
-                                 </padding></Label>
-                           </children>
-                        </VBox>
-                     </children>
-                  </HBox>
-                  <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="11">
-                     <children>
-                        <VBox prefHeight="200.0" prefWidth="50.0" />
-                        <VBox prefHeight="200.0" prefWidth="100.0">
-                           <children>
-                              <Label text="Rating:">
-                                 <font>
-                                    <Font size="14.0" />
-                                 </font></Label>
-                           </children>
-                           <padding>
-                              <Insets top="1.0" />
-                           </padding>
-                        </VBox>
-                     </children>
-                  </HBox>
-               </children>
-               <BorderPane.margin>
-                  <Insets left="50.0" top="50.0" />
-               </BorderPane.margin>
-            </GridPane>
-         </center>
+            <padding>
+                <Insets bottom="75.0" />
+            </padding>
         </BorderPane>
     </center>
 </BorderPane>

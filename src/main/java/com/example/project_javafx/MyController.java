@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.MenuItem;
 import javafx.stage.Stage;
 import javafx.event.ActionEvent;
 import java.io.IOException;
@@ -72,6 +73,52 @@ public class MyController {
         // Thiết lập scene cho stage
         scene = new Scene(root);
         scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm()); // Thêm dòng này
+
+        stage.setScene(scene); // Đặt scene cho stage
+
+        // Thiết lập lại kích thước cửa sổ
+        stage.setWidth(currentWidth);
+        stage.setHeight(currentHeight);
+
+        stage.show(); // Hiển thị stage
+    }
+    public void switchToFood(ActionEvent event) throws IOException {
+        // Tải tệp FXML
+        root = FXMLLoader.load(getClass().getResource("food.fxml"));
+
+        // Lấy stage từ event
+        Stage stage = (Stage) ((MenuItem) event.getSource()).getParentPopup().getOwnerWindow();
+
+        // Lưu kích thước hiện tại
+        double currentWidth = stage.getWidth();
+        double currentHeight = stage.getHeight();
+
+        // Thiết lập scene cho stage
+        scene = new Scene(root);
+        scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
+
+        stage.setScene(scene); // Đặt scene cho stage
+
+        // Thiết lập lại kích thước cửa sổ
+        stage.setWidth(currentWidth);
+        stage.setHeight(currentHeight);
+
+        stage.show(); // Hiển thị stage
+    }
+    public void switchToDrink(ActionEvent event) throws IOException {
+        // Tải tệp FXML
+        root = FXMLLoader.load(getClass().getResource("drink.fxml"));
+
+        // Lấy stage từ event
+        Stage stage = (Stage) ((MenuItem) event.getSource()).getParentPopup().getOwnerWindow();
+
+        // Lưu kích thước hiện tại
+        double currentWidth = stage.getWidth();
+        double currentHeight = stage.getHeight();
+
+        // Thiết lập scene cho stage
+        scene = new Scene(root);
+        scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
 
         stage.setScene(scene); // Đặt scene cho stage
 

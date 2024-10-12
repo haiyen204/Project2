@@ -14,7 +14,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project_javafx.MyController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project_javafx.MyController">
     <left>
         <HBox prefHeight="600.0" prefWidth="250.0" BorderPane.alignment="CENTER">
             <children>
@@ -172,7 +172,7 @@
                         </HBox>
                         <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="9">
                             <children>
-                                <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#switchToReview"  prefHeight="200.0" prefWidth="300.0" text="   Review">
+                                <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#switchToReview" prefHeight="200.0" prefWidth="300.0" text="   Review">
                                     <graphic>
                                         <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
                                             <image>
@@ -505,16 +505,13 @@
                <BorderPane.margin>
                   <Insets top="20.0" />
                </BorderPane.margin>
-               <padding>
-                  <Insets bottom="15.0" />
-               </padding>
             </GridPane>
          </center>
          <BorderPane.margin>
             <Insets left="50.0" />
          </BorderPane.margin>
          <padding>
-            <Insets bottom="80.0" />
+            <Insets bottom="95.0" />
          </padding>
       </BorderPane>
    </center>
