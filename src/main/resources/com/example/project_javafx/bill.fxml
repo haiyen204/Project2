@@ -3,6 +3,10 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
@@ -14,9 +18,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<?import javafx.scene.control.MenuButton?>
-<?import javafx.scene.control.MenuItem?>
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project_javafx.MyController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project_javafx.BillController">
     <left>
         <HBox prefHeight="600.0" prefWidth="250.0" BorderPane.alignment="CENTER">
             <children>
@@ -27,7 +29,6 @@
                     <rowConstraints>
                         <RowConstraints minHeight="10.0" prefHeight="60.0" vgrow="SOMETIMES" />
                         <RowConstraints minHeight="0.0" prefHeight="10.0" vgrow="SOMETIMES" />
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -58,69 +59,7 @@
                                     </font></Button>
                             </children>
                         </HBox>
-                        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="3">
-                            <children>
-                                <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#switchToCustomer" prefHeight="200.0" prefWidth="300.0" text="   Customer">
-                                    <graphic>
-                                        <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
-                                            <image>
-                                                <Image url="@img/user.png" />
-                                            </image>
-                                        </ImageView>
-                                    </graphic>
-                                    <padding>
-                                        <Insets left="50.0" />
-                                    </padding>
-                                    <font>
-                                        <Font size="14.0" />
-                                    </font>
-                                </Button>
-                            </children>
-                        </HBox>
                         <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="4">
-                            <children>
-                                <MenuButton fx:id="menuButton" alignment="CENTER" mnemonicParsing="false" prefHeight="200.0" prefWidth="300.0" text="    Menu">
-                                    <items>
-                                        <MenuItem mnemonicParsing="false" onAction="#switchToFood" text="Food" />
-                                        <MenuItem mnemonicParsing="false" onAction="#switchToDrink" text="Drink" />
-
-                                    </items>
-                                    <graphic>
-                                        <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
-                                            <image>
-                                                <Image url="@img/menu.png" />
-                                            </image>
-                                        </ImageView>
-                                    </graphic>
-                                    <font>
-                                        <Font size="14.0" />
-                                    </font>
-                                    <padding>
-                                        <Insets left="6.0" />
-                                    </padding>
-                                </MenuButton>
-                            </children>
-                        </HBox>
-                        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="5">
-                            <children>
-                                <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#switchToOrder" prefHeight="200.0" prefWidth="300.0" text="   Order">
-                                    <graphic>
-                                        <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
-                                            <image>
-                                                <Image url="@img/order.png" />
-                                            </image>
-                                        </ImageView>
-                                    </graphic>
-                                    <padding>
-                                        <Insets left="50.0" />
-                                    </padding>
-                                    <font>
-                                        <Font size="14.0" />
-                                    </font>
-                                </Button>
-                            </children>
-                        </HBox>
-                        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="6">
                             <children>
                                 <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#switchToBill" prefHeight="200.0" prefWidth="300.0" text="   Bill">
                                     <graphic>
@@ -139,26 +78,7 @@
                                 </Button>
                             </children>
                         </HBox>
-                        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="7">
-                            <children>
-                                <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#switchToInventory" prefHeight="200.0" prefWidth="300.0" text="   Inventory">
-                                    <graphic>
-                                        <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
-                                            <image>
-                                                <Image url="@img/inventory.png" />
-                                            </image>
-                                        </ImageView>
-                                    </graphic>
-                                    <padding>
-                                        <Insets left="50.0" />
-                                    </padding>
-                                    <font>
-                                        <Font size="14.0" />
-                                    </font>
-                                </Button>
-                            </children>
-                        </HBox>
-                        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="8">
+                        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="6">
                             <children>
                                 <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#switchToReservation" prefHeight="200.0" prefWidth="300.0" text="   Reservation">
                                     <graphic>
@@ -177,7 +97,7 @@
                                 </Button>
                             </children>
                         </HBox>
-                        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="9">
+                        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="7">
                             <children>
                                 <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#switchToReview" prefHeight="200.0" prefWidth="300.0" text="   Review">
                                     <graphic>
@@ -189,6 +109,25 @@
                                     </graphic>
                                     <padding>
                                         <Insets left="50.0" />
+                                    </padding>
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                                </Button>
+                            </children>
+                        </HBox>
+                        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="8">
+                            <children>
+                                <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#switchToLogout" prefHeight="200.0" prefWidth="300.0" text="   Logout">
+                                    <graphic>
+                                        <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@img/logout.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                    <padding>
+                                        <Insets left="51.0" />
                                     </padding>
                                     <font>
                                         <Font size="14.0" />
@@ -228,6 +167,41 @@
                             </padding>
                         </HBox>
                         <Line endX="100.0" startX="-100.0" strokeWidth="2.0" GridPane.rowIndex="1" />
+                        <MenuButton fx:id="menuButton" alignment="CENTER" mnemonicParsing="false" prefHeight="200.0" prefWidth="300.0" text="    Menu" GridPane.rowIndex="3">
+                            <items>
+                                <MenuItem mnemonicParsing="false" onAction="#switchToFood" text="Food" />
+                                <MenuItem mnemonicParsing="false" onAction="#switchToDrink" text="Drink" />
+
+                            </items>
+                            <graphic>
+                                <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@img/menu.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                            <padding>
+                                <Insets left="6.0" />
+                            </padding>
+                        </MenuButton>
+                        <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#switchToInventory" prefHeight="200.0" prefWidth="300.0" text="   Inventory" GridPane.rowIndex="5">
+                            <graphic>
+                                <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@img/inventory.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                            <padding>
+                                <Insets left="50.0" />
+                            </padding>
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </Button>
                     </children>
                     <HBox.margin>
                         <Insets bottom="100.0" left="50.0" />
@@ -248,6 +222,27 @@
             <BorderPane.margin>
                 <Insets left="50.0" />
             </BorderPane.margin>
+         <center>
+            <TableView fx:id="tableView" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+              <columns>
+                <TableColumn fx:id="nameColumn" prefWidth="205.0" text="Name" />
+                <TableColumn fx:id="quantityColumn" prefWidth="205.0" text="Quantity" />
+                  <TableColumn fx:id="priceColumn" prefWidth="205.0" text="Price" />
+                  <TableColumn fx:id="totalColumn" prefWidth="205.0" text="Total" />
+              </columns>
+               <BorderPane.margin>
+                  <Insets bottom="50.0" left="50.0" right="50.0" top="50.0" />
+               </BorderPane.margin>
+            </TableView>
+
+         </center>
+         <bottom>
+            <Button mnemonicParsing="false" onAction="#deleteSelectedItem" styleClass="add-button" text="Delete" BorderPane.alignment="CENTER">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+         </bottom>
         </BorderPane>
     </center>
 </BorderPane>

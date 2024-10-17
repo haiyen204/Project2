@@ -1,20 +1,21 @@
 package com.example.project_javafx;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
+import javafx.scene.control.*;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
-import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
 
 import java.io.IOException;
 
-public class MyController {
+public class DrinkController {
     @FXML
     private Stage stage;
     private Scene scene;
@@ -26,21 +27,62 @@ public class MyController {
     private boolean hoveringItem = false;
 
     @FXML
+    private Spinner<Integer> orangejuiceSpinner;
+
+    @FXML
     private Pagination pagination;
 
     @FXML
     private Label menuLabel;
 
     @FXML
-    private ImageView menuImageView;
+    private ImageView menuImageView1;
+
+    @FXML
+    private ImageView menuImageView2;
+
+    @FXML
+    private ImageView menuImageView3;
+
+    @FXML
+    private ImageView menuImageView4;
+
+    @FXML
+    private ImageView menuImageView5;
+
+    @FXML
+    private ImageView menuImageView6;
+
+    @FXML
+    private ImageView menuImageView7;
+
+    @FXML
+    private ImageView menuImageView8;
+
+    @FXML
+    private ImageView menuImageView9;
 
     @FXML
     private Spinner<?> spinner;
 
     private final int PAGE_COUNT = 3;
 
+    @FXML
+    private TableView<FoodItem> tableView;
+    @FXML
+    private TableColumn<FoodItem, String> nameColumn;
+    @FXML
+    private TableColumn<FoodItem, Integer> quantityColumn;
+    @FXML
+    private TableColumn<FoodItem, Double> priceColumn;
 
-    public void initialize() {
+    @FXML
+    private void initialize() {
+        nameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
+        quantityColumn.setCellValueFactory(new PropertyValueFactory<>("quantity"));
+        priceColumn.setCellValueFactory(new PropertyValueFactory<>("price"));
+
+        updateTable(); // Cập nhật bảng khi khởi tạo
 
 
         if (pagination != null) {
@@ -51,6 +93,8 @@ public class MyController {
         } else {
             System.out.println("Pagination is null!");
         }
+
+        orangejuiceSpinner.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 100, 0));
 
         if (menuButton != null) {
             // Hiển thị menu khi hover vào menuButton
@@ -101,30 +145,74 @@ public class MyController {
     private javafx.scene.Node createPage(int pageIndex) {
         updatePage(pageIndex);
         return new javafx.scene.layout.VBox(); // Trả về một VBox rỗng
-
     }
-
-    private void updatePage(int pageIndex) {
-        switch (pageIndex) {
-            case 0:
-                menuLabel.setText("Menu 1");
-                menuImageView.setImage(new Image(getClass().getResourceAsStream("/com/example/project_javafx/anhdoan/bittet.png")));
-                break;
-            case 1:
-                menuLabel.setText("Menu 2");
-                menuImageView.setImage(new Image(getClass().getResourceAsStream("/com/example/project_javafx/anhdoan/bobittet.png")));
-                break;
-            case 2:
-                menuLabel.setText("Menu 3");
-                menuImageView.setImage(new Image(getClass().getResourceAsStream("/com/example/project_javafx/anhdoan/bittet.png")));
-                break;
+    public void updateTable() {
+        tableView.getItems().clear();
+        for (FoodItem item : DataHolder.getInstance().getFoodItems()) {
+            tableView.getItems().add(item); // Thêm các món ăn vào bảng
         }
     }
 
 
+    private void updatePage(int pageIndex) {
+        switch (pageIndex) {
+            case 0:
+                menuLabel.setText("Orange juice: 5$");
+                menuImageView1.setImage(new Image(getClass().getResourceAsStream("/com/example/project_javafx/douong/nuoccamep.png")));
+                menuImageView2.setImage(new Image(getClass().getResourceAsStream("/com/example/project_javafx/douong/nuoccamep.png")));
+                menuImageView3.setImage(new Image(getClass().getResourceAsStream("/com/example/project_javafx/douong/nuoccamep.png")));
+                menuImageView4.setImage(new Image(getClass().getResourceAsStream("/com/example/project_javafx/douong/nuoccamep.png")));
+                menuImageView5.setImage(new Image(getClass().getResourceAsStream("/com/example/project_javafx/douong/nuoccamep.png")));
+                menuImageView6.setImage(new Image(getClass().getResourceAsStream("/com/example/project_javafx/douong/nuoccamep.png")));
+                menuImageView7.setImage(new Image(getClass().getResourceAsStream("/com/example/project_javafx/douong/nuoccamep.png")));
+                menuImageView8.setImage(new Image(getClass().getResourceAsStream("/com/example/project_javafx/douong/nuoccamep.png")));
+                menuImageView9.setImage(new Image(getClass().getResourceAsStream("/com/example/project_javafx/douong/nuoccamep.png")));
+                break;
+            case 1:
+                menuLabel.setText("Menu 2");
+                menuImageView1.setImage(new Image(getClass().getResourceAsStream("/com/example/project_javafx/douong/nuocchanhleo.png")));
+                menuImageView2.setImage(new Image(getClass().getResourceAsStream("/com/example/project_javafx/douong/nuocchanhleo.png")));
+                menuImageView3.setImage(new Image(getClass().getResourceAsStream("/com/example/project_javafx/douong/nuocchanhleo.png")));
+                menuImageView4.setImage(new Image(getClass().getResourceAsStream("/com/example/project_javafx/douong/nuocchanhleo.png")));
+                menuImageView5.setImage(new Image(getClass().getResourceAsStream("/com/example/project_javafx/douong/nuocchanhleo.png")));
+                menuImageView6.setImage(new Image(getClass().getResourceAsStream("/com/example/project_javafx/douong/nuocchanhleo.png")));
+                menuImageView7.setImage(new Image(getClass().getResourceAsStream("/com/example/project_javafx/douong/nuocchanhleo.png")));
+                menuImageView8.setImage(new Image(getClass().getResourceAsStream("/com/example/project_javafx/douong/nuocchanhleo.png")));
+                menuImageView9.setImage(new Image(getClass().getResourceAsStream("/com/example/project_javafx/douong/nuocchanhleo.png")));
+                break;
+            case 2:
+                menuLabel.setText("Menu 3");
+                menuImageView1.setImage(new Image(getClass().getResourceAsStream("/com/example/project_javafx/douong/nuocduahau.png")));
+                menuImageView2.setImage(new Image(getClass().getResourceAsStream("/com/example/project_javafx/douong/nuocduahau.png")));
+                menuImageView3.setImage(new Image(getClass().getResourceAsStream("/com/example/project_javafx/douong/nuocduahau.png")));
+                menuImageView4.setImage(new Image(getClass().getResourceAsStream("/com/example/project_javafx/douong/nuocduahau.png")));
+                menuImageView5.setImage(new Image(getClass().getResourceAsStream("/com/example/project_javafx/douong/nuocduahau.png")));
+                menuImageView6.setImage(new Image(getClass().getResourceAsStream("/com/example/project_javafx/douong/nuocduahau.png")));
+                menuImageView7.setImage(new Image(getClass().getResourceAsStream("/com/example/project_javafx/douong/nuocduahau.png")));
+                menuImageView8.setImage(new Image(getClass().getResourceAsStream("/com/example/project_javafx/douong/nuocduahau.png")));
+                menuImageView9.setImage(new Image(getClass().getResourceAsStream("/com/example/project_javafx/douong/nuocduahau.png")));
+                break;
+        }
+    }
+
+    @FXML
+    private void addOrangejuice() {
+        int quantity = orangejuiceSpinner.getValue();
+        if (quantity > 0) {
+            DataHolder.getInstance().addFoodItem(new FoodItem("Orange juice", quantity, 5.0));
+            updateTable(); // Cập nhật bảng ngay sau khi thêm món ăn
+        }
+        orangejuiceSpinner.getValueFactory().setValue(0);
+    }
+
+    public void deleteSelectedItem() {
+        FoodItem selectedItem = tableView.getSelectionModel().getSelectedItem();
+        if (selectedItem != null) {
+            tableView.getItems().remove(selectedItem);
+            DataHolder.getInstance().getFoodItems().remove(selectedItem); // Xóa khỏi DataHolder
+        }
+    }
     public void switchToStaff(ActionEvent event) throws IOException {
-
-
         root = FXMLLoader.load(getClass().getResource("staff.fxml"));
 
         // Lấy stage từ event
@@ -215,7 +303,6 @@ public class MyController {
 
         stage.show(); // Hiển thị stage
     }
-
     public void switchToBill(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("bill.fxml"));
 
@@ -327,4 +414,3 @@ public class MyController {
         stage.show(); // Hiển thị stage
     }
 }
-

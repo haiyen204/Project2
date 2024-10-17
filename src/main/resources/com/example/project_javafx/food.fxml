@@ -5,6 +5,10 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.MenuButton?>
 <?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Pagination?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
@@ -16,7 +20,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project_javafx.MyController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project_javafx.FoodController">
     <left>
         <HBox prefHeight="600.0" prefWidth="250.0" BorderPane.alignment="CENTER">
             <children>
@@ -27,7 +31,6 @@
                     <rowConstraints>
                         <RowConstraints minHeight="10.0" prefHeight="60.0" vgrow="SOMETIMES" />
                         <RowConstraints minHeight="0.0" prefHeight="10.0" vgrow="SOMETIMES" />
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -58,69 +61,7 @@
                                     </font></Button>
                             </children>
                         </HBox>
-                        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="3">
-                            <children>
-                                <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#switchToCustomer" prefHeight="200.0" prefWidth="300.0" text="   Customer">
-                                    <graphic>
-                                        <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
-                                            <image>
-                                                <Image url="@img/user.png" />
-                                            </image>
-                                        </ImageView>
-                                    </graphic>
-                                    <padding>
-                                        <Insets left="50.0" />
-                                    </padding>
-                                    <font>
-                                        <Font size="14.0" />
-                                    </font>
-                                </Button>
-                            </children>
-                        </HBox>
                         <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="4">
-                            <children>
-                                <MenuButton fx:id="menuButton" alignment="CENTER" mnemonicParsing="false" prefHeight="200.0" prefWidth="300.0" text="    Menu">
-                                    <items>
-                                        <MenuItem mnemonicParsing="false" onAction="#switchToFood" text="Food" />
-                                        <MenuItem mnemonicParsing="false" onAction="#switchToDrink" text="Drink" />
-
-                                    </items>
-                                    <graphic>
-                                        <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
-                                            <image>
-                                                <Image url="@img/menu.png" />
-                                            </image>
-                                        </ImageView>
-                                    </graphic>
-                                    <font>
-                                        <Font size="14.0" />
-                                    </font>
-                                    <padding>
-                                        <Insets left="6.0" />
-                                    </padding>
-                                </MenuButton>
-                            </children>
-                        </HBox>
-                        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="5">
-                            <children>
-                                <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#switchToOrder" prefHeight="200.0" prefWidth="300.0" text="   Order">
-                                    <graphic>
-                                        <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
-                                            <image>
-                                                <Image url="@img/order.png" />
-                                            </image>
-                                        </ImageView>
-                                    </graphic>
-                                    <padding>
-                                        <Insets left="50.0" />
-                                    </padding>
-                                    <font>
-                                        <Font size="14.0" />
-                                    </font>
-                                </Button>
-                            </children>
-                        </HBox>
-                        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="6">
                             <children>
                                 <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#switchToBill" prefHeight="200.0" prefWidth="300.0" text="   Bill">
                                     <graphic>
@@ -139,26 +80,7 @@
                                 </Button>
                             </children>
                         </HBox>
-                        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="7">
-                            <children>
-                                <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#switchToInventory" prefHeight="200.0" prefWidth="300.0" text="   Inventory">
-                                    <graphic>
-                                        <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
-                                            <image>
-                                                <Image url="@img/inventory.png" />
-                                            </image>
-                                        </ImageView>
-                                    </graphic>
-                                    <padding>
-                                        <Insets left="50.0" />
-                                    </padding>
-                                    <font>
-                                        <Font size="14.0" />
-                                    </font>
-                                </Button>
-                            </children>
-                        </HBox>
-                        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="8">
+                        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="6">
                             <children>
                                 <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#switchToReservation" prefHeight="200.0" prefWidth="300.0" text="   Reservation">
                                     <graphic>
@@ -177,7 +99,7 @@
                                 </Button>
                             </children>
                         </HBox>
-                        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="9">
+                        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="7">
                             <children>
                                 <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#switchToReview" prefHeight="200.0" prefWidth="300.0" text="   Review">
                                     <graphic>
@@ -189,6 +111,25 @@
                                     </graphic>
                                     <padding>
                                         <Insets left="50.0" />
+                                    </padding>
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                                </Button>
+                            </children>
+                        </HBox>
+                        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="8">
+                            <children>
+                                <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#switchToLogout" prefHeight="200.0" prefWidth="300.0" text="   Logout">
+                                    <graphic>
+                                        <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@img/logout.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                    <padding>
+                                        <Insets left="51.0" />
                                     </padding>
                                     <font>
                                         <Font size="14.0" />
@@ -228,6 +169,41 @@
                             </padding>
                         </HBox>
                         <Line endX="100.0" startX="-100.0" strokeWidth="2.0" GridPane.rowIndex="1" />
+                        <MenuButton fx:id="menuButton" alignment="CENTER" mnemonicParsing="false" prefHeight="200.0" prefWidth="300.0" text="    Menu" GridPane.rowIndex="3">
+                            <items>
+                                <MenuItem mnemonicParsing="false" onAction="#switchToFood" text="Food" />
+                                <MenuItem mnemonicParsing="false" onAction="#switchToDrink" text="Drink" />
+
+                            </items>
+                            <graphic>
+                                <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@img/menu.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                            <padding>
+                                <Insets left="6.0" />
+                            </padding>
+                        </MenuButton>
+                        <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#switchToInventory" prefHeight="200.0" prefWidth="300.0" text="   Inventory" GridPane.rowIndex="5">
+                            <graphic>
+                                <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@img/inventory.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                            <padding>
+                                <Insets left="50.0" />
+                            </padding>
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </Button>
                     </children>
                     <HBox.margin>
                         <Insets bottom="100.0" left="50.0" />
@@ -257,136 +233,435 @@
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
-                    <children>
-                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
-                            <children>
-                                <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0">
-                                    <graphic>
-                                        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                                            <image>
-                                                <Image url="@menu_img/chicken.png" />
-                                            </image>
-                                        </ImageView>
-                                    </graphic>
-                                </Button>
-                            </children>
-                        </VBox>
-                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1">
-                            <children>
-                                <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0">
-                                    <graphic>
-                                        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                                            <image>
-                                                <Image url="@menu_img/chicken.png" />
-                                            </image>
-                                        </ImageView>
-                                    </graphic>
-                                </Button>
-                            </children>
-                        </VBox>
-                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="1">
-                            <children>
-                                <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0">
-                                    <graphic>
-                                        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                                            <image>
-                                                <Image url="@menu_img/chicken.png" />
-                                            </image>
-                                        </ImageView>
-                                    </graphic>
-                                </Button>
-                            </children>
-                        </VBox>
-                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                            <children>
-                                <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0">
-                                    <graphic>
-                                        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                                            <image>
-                                                <Image url="@menu_img/chicken.png" />
-                                            </image>
-                                        </ImageView>
-                                    </graphic>
-                                </Button>
-                            </children>
-                        </VBox>
-                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="2">
-                            <children>
-                                <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0">
-                                    <graphic>
-                                        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                                            <image>
-                                                <Image url="@menu_img/chicken.png" />
-                                            </image>
-                                        </ImageView>
-                                    </graphic>
-                                </Button>
-                            </children>
-                        </VBox>
-                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
-                            <children>
-                                <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0">
-                                    <graphic>
-                                        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                                            <image>
-                                                <Image url="@menu_img/chicken.png" />
-                                            </image>
-                                        </ImageView>
-                                    </graphic>
-                                </Button>
-                            </children>
-                        </VBox>
-                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="2">
-                            <children>
-                                <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0">
-                                    <graphic>
-                                        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                                            <image>
-                                                <Image url="@menu_img/chicken.png" />
-                                            </image>
-                                        </ImageView>
-                                    </graphic>
-                                </Button>
-                            </children>
-                        </VBox>
-                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
-                            <children>
-                                <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0">
-                                    <graphic>
-                                        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                                            <image>
-                                                <Image url="@menu_img/chicken.png" />
-                                            </image>
-                                        </ImageView>
-                                    </graphic>
-                                </Button>
-                            </children>
-                        </VBox>
-                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
-                            <children>
-                                <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0">
-                                    <graphic>
-                                        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                                            <image>
-                                                <Image url="@menu_img/chicken.png" />
-                                            </image>
-                                        </ImageView>
-                                    </graphic>
-                                </Button>
-                            </children>
-                        </VBox>
-                    </children>
                     <BorderPane.margin>
                         <Insets top="20.0" />
                     </BorderPane.margin>
+                    <children>
+                        <VBox prefHeight="200.0" prefWidth="100.0">
+                            <children>
+                                <VBox alignment="TOP_CENTER" prefHeight="30.0" prefWidth="200.0">
+                                    <children>
+                                        <Label fx:id="menuLabel" text="Beefsteak: 10$">
+                                            <font>
+                                                <Font size="14.0" />
+                                            </font>
+                                        </Label>
+                                    </children>
+                                </VBox>
+                                <VBox alignment="CENTER" prefHeight="180.0" prefWidth="200.0">
+                                    <children>
+                                        <ImageView fx:id="menuImageView1" fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@anhdoan/bittet.png" />
+                                            </image>
+                                        </ImageView>
+                                    </children>
+                                </VBox>
+                                <VBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                    <children>
+                                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                            <children>
+                                                <Spinner fx:id="beefsteakSpinner" prefHeight="30.0" prefWidth="120.0" />
+                                                <Button mnemonicParsing="false" onAction="#addBeefsteak" styleClass="add-button" text="Add">
+                                                    <font>
+                                                        <Font size="14.0" />
+                                                    </font>
+                                                    <HBox.margin>
+                                                        <Insets left="15.0" />
+                                                    </HBox.margin>
+                                                </Button>
+                                            </children>
+                                        </HBox>
+                                    </children>
+                                </VBox>
+                            </children>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1">
+                            <children>
+                                <VBox alignment="TOP_CENTER" prefHeight="30.0" prefWidth="200.0">
+                                    <children>
+                                        <Label text="Label">
+                                            <font>
+                                                <Font size="14.0" />
+                                            </font>
+                                        </Label>
+                                    </children></VBox>
+                                <VBox alignment="CENTER" prefHeight="180.0" prefWidth="200.0">
+                                    <children>
+                                        <ImageView fx:id="menuImageView2" fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@anhdoan/bittet.png" />
+                                            </image>
+                                        </ImageView>
+                                    </children></VBox>
+                                <VBox prefHeight="100.0" prefWidth="200.0">
+                                    <children>
+                                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                            <children>
+                                                <Spinner prefHeight="30.0" prefWidth="120.0" />
+                                                <Button mnemonicParsing="false" styleClass="add-button" text="Add">
+                                                    <font>
+                                                        <Font size="14.0" />
+                                                    </font>
+                                                    <HBox.margin>
+                                                        <Insets left="15.0" />
+                                                    </HBox.margin>
+                                                </Button>
+                                            </children>
+                                        </HBox>
+                                    </children></VBox>
+                            </children>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="2">
+                            <children>
+                                <VBox alignment="CENTER" prefHeight="70.0" prefWidth="200.0">
+                                    <children>
+                                        <Label text="Label">
+                                            <font>
+                                                <Font size="14.0" />
+                                            </font>
+                                        </Label>
+                                    </children></VBox>
+                                <VBox alignment="CENTER" prefHeight="180.0" prefWidth="200.0">
+                                    <children>
+                                        <ImageView fx:id="menuImageView3" fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@anhdoan/bittet.png" />
+                                            </image>
+                                        </ImageView>
+                                    </children></VBox>
+                                <VBox prefHeight="110.0" prefWidth="200.0">
+                                    <children>
+                                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                            <children>
+                                                <Spinner prefHeight="30.0" prefWidth="120.0" />
+                                                <Button mnemonicParsing="false" styleClass="add-button" text="Add">
+                                                    <font>
+                                                        <Font size="14.0" />
+                                                    </font>
+                                                    <HBox.margin>
+                                                        <Insets left="15.0" />
+                                                    </HBox.margin>
+                                                </Button>
+                                            </children>
+                                        </HBox>
+                                    </children></VBox>
+                            </children>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="1">
+                            <children>
+                                <VBox alignment="CENTER" prefHeight="52.0" prefWidth="200.0">
+                                    <children>
+                                        <Label text="Label">
+                                            <font>
+                                                <Font size="14.0" />
+                                            </font>
+                                        </Label>
+                                    </children>
+                                    <VBox.margin>
+                                        <Insets top="20.0" />
+                                    </VBox.margin></VBox>
+                                <VBox alignment="CENTER" prefHeight="180.0" prefWidth="200.0">
+                                    <children>
+                                        <ImageView fx:id="menuImageView4" fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@anhdoan/bittet.png" />
+                                            </image>
+                                        </ImageView>
+                                    </children></VBox>
+                                <VBox prefHeight="117.0" prefWidth="200.0">
+                                    <children>
+                                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                            <children>
+                                                <Spinner prefHeight="30.0" prefWidth="120.0" />
+                                                <Button mnemonicParsing="false" styleClass="add-button" text="Add">
+                                                    <font>
+                                                        <Font size="14.0" />
+                                                    </font>
+                                                    <HBox.margin>
+                                                        <Insets left="15.0" />
+                                                    </HBox.margin>
+                                                </Button>
+                                            </children>
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                                        </HBox>
+                                    </children></VBox>
+                            </children>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                            <children>
+                                <VBox alignment="CENTER" prefHeight="63.0" prefWidth="200.0">
+                                    <children>
+                                        <Label text="Label">
+                                            <font>
+                                                <Font size="14.0" />
+                                            </font>
+                                        </Label>
+                                    </children>
+                                    <VBox.margin>
+                                        <Insets top="20.0" />
+                                    </VBox.margin></VBox>
+                                <VBox alignment="CENTER" prefHeight="180.0" prefWidth="200.0">
+                                    <children>
+                                        <ImageView fx:id="menuImageView5" fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@anhdoan/bittet.png" />
+                                            </image>
+                                        </ImageView>
+                                    </children></VBox>
+                                <VBox prefHeight="103.0" prefWidth="200.0">
+                                    <children>
+                                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                            <children>
+                                                <Spinner prefHeight="30.0" prefWidth="120.0" />
+                                                <Button mnemonicParsing="false" styleClass="add-button" text="Add">
+                                                    <font>
+                                                        <Font size="14.0" />
+                                                    </font>
+                                                    <HBox.margin>
+                                                        <Insets left="15.0" />
+                                                    </HBox.margin>
+                                                </Button>
+                                            </children>
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                                        </HBox>
+                                    </children></VBox>
+                            </children>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                            <children>
+                                <VBox alignment="CENTER" prefHeight="54.0" prefWidth="200.0">
+                                    <children>
+                                        <Label text="Label">
+                                            <font>
+                                                <Font size="14.0" />
+                                            </font>
+                                        </Label>
+                                    </children>
+                                    <VBox.margin>
+                                        <Insets top="20.0" />
+                                    </VBox.margin></VBox>
+                                <VBox alignment="CENTER" prefHeight="180.0" prefWidth="200.0">
+                                    <children>
+                                        <ImageView fx:id="menuImageView6" fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@anhdoan/bittet.png" />
+                                            </image>
+                                        </ImageView>
+                                    </children></VBox>
+                                <VBox prefHeight="110.0" prefWidth="200.0">
+                                    <children>
+                                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                            <children>
+                                                <Spinner prefHeight="30.0" prefWidth="120.0" />
+                                                <Button mnemonicParsing="false" styleClass="add-button" text="Add">
+                                                    <font>
+                                                        <Font size="14.0" />
+                                                    </font>
+                                                    <HBox.margin>
+                                                        <Insets left="15.0" />
+                                                    </HBox.margin>
+                                                </Button>
+                                            </children>
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                                        </HBox>
+                                    </children></VBox>
+                            </children>
+                        </VBox>
+                        <VBox prefHeight="86.0" prefWidth="200.0" GridPane.rowIndex="2">
+                            <children>
+                                <VBox alignment="CENTER" prefHeight="46.0" prefWidth="200.0">
+                                    <children>
+                                        <Label text="Label">
+                                            <font>
+                                                <Font size="14.0" />
+                                            </font>
+                                        </Label>
+                                    </children>
+                                    <VBox.margin>
+                                        <Insets top="20.0" />
+                                    </VBox.margin></VBox>
+                                <VBox alignment="CENTER" prefHeight="180.0" prefWidth="200.0">
+                                    <children>
+                                        <ImageView fx:id="menuImageView7" fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@anhdoan/bittet.png" />
+                                            </image>
+                                        </ImageView>
+                                    </children></VBox>
+                                <VBox prefHeight="94.0" prefWidth="200.0">
+                                    <children>
+                                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                            <children>
+                                                <Spinner prefHeight="30.0" prefWidth="120.0" />
+                                                <Button mnemonicParsing="false" styleClass="add-button" text="Add">
+                                                    <font>
+                                                        <Font size="14.0" />
+                                                    </font>
+                                                    <HBox.margin>
+                                                        <Insets left="15.0" />
+                                                    </HBox.margin>
+                                                </Button>
+                                            </children>
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                                        </HBox>
+                                    </children></VBox>
+                            </children>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                            <children>
+                                <VBox alignment="CENTER" prefHeight="59.0" prefWidth="200.0">
+                                    <children>
+                                        <Label text="Label">
+                                            <font>
+                                                <Font size="14.0" />
+                                            </font>
+                                        </Label>
+                                    </children>
+                                    <VBox.margin>
+                                        <Insets top="20.0" />
+                                    </VBox.margin></VBox>
+                                <VBox alignment="CENTER" prefHeight="180.0" prefWidth="200.0">
+                                    <children>
+                                        <ImageView fx:id="menuImageView8" fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@anhdoan/bittet.png" />
+                                            </image>
+                                        </ImageView>
+                                    </children></VBox>
+                                <VBox prefHeight="94.0" prefWidth="200.0">
+                                    <children>
+                                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                            <children>
+                                                <Spinner prefHeight="30.0" prefWidth="120.0" />
+                                                <Button mnemonicParsing="false" styleClass="add-button" text="Add">
+                                                    <font>
+                                                        <Font size="14.0" />
+                                                    </font>
+                                                    <HBox.margin>
+                                                        <Insets left="15.0" />
+                                                    </HBox.margin>
+                                                </Button>
+                                            </children>
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                                        </HBox>
+                                    </children></VBox>
+                            </children>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                            <children>
+                                <VBox alignment="CENTER" prefHeight="63.0" prefWidth="200.0">
+                                    <children>
+                                        <Label text="Label">
+                                            <font>
+                                                <Font size="14.0" />
+                                            </font>
+                                        </Label>
+                                    </children>
+                                    <VBox.margin>
+                                        <Insets top="20.0" />
+                                    </VBox.margin>
+                                </VBox>
+                                <VBox alignment="CENTER" prefHeight="180.0" prefWidth="200.0">
+                                    <children>
+                                        <ImageView fx:id="menuImageView9" fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@anhdoan/bittet.png" />
+                                            </image>
+                                        </ImageView>
+                                    </children>
+                                </VBox>
+                                <VBox prefHeight="72.0" prefWidth="200.0">
+                                    <children>
+                                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                            <children>
+                                                <Spinner prefHeight="30.0" prefWidth="120.0" />
+                                                <Button mnemonicParsing="false" styleClass="add-button" text="Add">
+                                                    <font>
+                                                        <Font size="14.0" />
+                                                    </font>
+                                                    <HBox.margin>
+                                                        <Insets left="15.0" />
+                                                    </HBox.margin>
+                                                </Button>
+                                            </children>
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                                        </HBox>
+                                    </children>
+                                </VBox>
+                            </children></VBox>
+                    </children>
                 </GridPane>
             </center>
             <BorderPane.margin>
                 <Insets left="50.0" />
             </BorderPane.margin>
-            <padding>
-                <Insets bottom="75.0" />
-            </padding>
+         <bottom>
+            <Pagination fx:id="pagination" maxWidth="-Infinity" prefHeight="30.0" prefWidth="799.0" BorderPane.alignment="CENTER">
+               <BorderPane.margin>
+                  <Insets bottom="20.0" top="30.0" />
+               </BorderPane.margin>
+            </Pagination>
+         </bottom>
+         <right>
+            <VBox prefHeight="586.0" prefWidth="300.0" BorderPane.alignment="CENTER">
+               <children>
+                  <TableView fx:id="tableView" prefHeight="600.0" prefWidth="300.0">
+                    <columns>
+                      <TableColumn fx:id="nameColumn" prefWidth="104.00000303983688" text="Name" />
+                      <TableColumn fx:id="quantityColumn" prefWidth="93.60003662109375" text="Quantity" />
+                        <TableColumn fx:id="priceColumn" prefWidth="98.39988708496094" text="Price ($)" />
+                    </columns>
+                  </TableView>
+                  <HBox prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <Button mnemonicParsing="false" text="Pay">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <Button onAction="#deleteSelectedItem" mnemonicParsing="false" text="Delete">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <Button mnemonicParsing="false" text="Delete all">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </children>
+               <BorderPane.margin>
+                  <Insets right="40.0" top="20.0" />
+               </BorderPane.margin>
+            </VBox>
+         </right>
         </BorderPane>
     </center>
 </BorderPane>

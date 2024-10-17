@@ -6,6 +6,18 @@
     -fx-background-color: #e3e3e3;
 }
 
+.button.selected {
+    -fx-background-color: yellow;
+}
+
+.add-button {
+    -fx-background-color: #dfdfdf;
+}
+
+.add-button:hover {
+    -fx-background-color: #c8c8c8;
+}
+
 .text-field {
     -fx-border-width: 0 0 1px 0;
     -fx-border-color: transparent transparent #1e1e1e transparent;
@@ -31,6 +43,12 @@
     -fx-font-size: 14px;
 }
 
+.spinner .text-field {
+    -fx-border-width: 0; /* Ẩn border */
+    -fx-background-color: transparent; /* Đặt nền thành trong suốt */
+}
 
-
+.pagination {
+    -fx-font-size: 14px;
+}
 

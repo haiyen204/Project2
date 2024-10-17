@@ -18,7 +18,7 @@ public class Home extends Application{
 
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Home.class.getResource("menu.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Home.class.getResource("food.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
         stage.setScene(scene);
