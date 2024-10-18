@@ -616,44 +616,36 @@
                 </Pagination>
             </bottom>
             <right>
-                <VBox prefHeight="586.0" prefWidth="300.0" BorderPane.alignment="CENTER">
+                <VBox prefHeight="566.0" prefWidth="397.0" BorderPane.alignment="CENTER">
                     <children>
-                        <TableView fx:id="tableView" prefHeight="600.0" prefWidth="300.0">
+                        <TableView fx:id="tableView" prefHeight="600.0" prefWidth="210.0">
                             <columns>
-                                <TableColumn fx:id="nameColumn" prefWidth="104.00000303983688" text="Name" />
-                                <TableColumn fx:id="quantityColumn" prefWidth="93.60003662109375" text="Quantity" />
-                                <TableColumn fx:id="priceColumn" prefWidth="98.39988708496094" text="Price ($)" />
+                                <TableColumn fx:id="nameColumn" prefWidth="111.20001375675201" text="Name" />
+                                <TableColumn fx:id="quantityColumn" prefWidth="92.00005340576172" text="Quantity" />
+                                <TableColumn fx:id="priceColumn" prefWidth="99.199951171875" text="Price ($)" />
+                                <TableColumn fx:id="actionColumn" prefWidth="92.7999206542969" text="Action" />
                             </columns>
                         </TableView>
                         <HBox prefHeight="100.0" prefWidth="200.0">
                             <children>
-                                <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                                     <children>
-                                        <Button mnemonicParsing="false" text="Pay">
+                                        <Label text="Total:">
+                                            <font>
+                                                <Font size="14.0" />
+                                            </font>
+                                        </Label>
+                                    </children>
+                                </HBox>
+                                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                    <children>
+                                        <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="115.0" text="Pay">
                                             <font>
                                                 <Font size="14.0" />
                                             </font>
                                         </Button>
                                     </children>
-                                </VBox>
-                                <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
-                                    <children>
-                                        <Button mnemonicParsing="false" onAction="#deleteSelectedItem" text="Delete">
-                                            <font>
-                                                <Font size="14.0" />
-                                            </font>
-                                        </Button>
-                                    </children>
-                                </VBox>
-                                <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
-                                    <children>
-                                        <Button mnemonicParsing="false" text="Delete all">
-                                            <font>
-                                                <Font size="14.0" />
-                                            </font>
-                                        </Button>
-                                    </children>
-                                </VBox>
+                                </HBox>
                             </children>
                         </HBox>
                     </children>

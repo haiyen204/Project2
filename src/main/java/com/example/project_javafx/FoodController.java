@@ -1,5 +1,8 @@
 package com.example.project_javafx;
 
+import javafx.beans.property.SimpleObjectProperty;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
@@ -14,6 +17,7 @@ import javafx.stage.Stage;
 import javafx.fxml.FXMLLoader;
 
 import java.io.IOException;
+import java.util.List;
 
 public class FoodController {
     @FXML
@@ -34,6 +38,9 @@ public class FoodController {
 
     @FXML
     private Label menuLabel;
+
+    @FXML
+    private Label menuPrice;
 
     @FXML
     private ImageView menuImageView1;
@@ -75,15 +82,37 @@ public class FoodController {
     private TableColumn<FoodItem, Integer> quantityColumn;
     @FXML
     private TableColumn<FoodItem, Double> priceColumn;
+    @FXML
+    private TableColumn<FoodItem, Button> actionColumn;
+
+    private ObservableList<FoodItem> dataList = FXCollections.observableArrayList();
+
+    @FXML
+    private List<FoodItem> foodItems; // Khai báo biến ở đầu lớp
 
     @FXML
     private void initialize() {
+        fetchDataFromDatabase();
+
+        // Thiết lập cột dữ liệu
         nameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
         quantityColumn.setCellValueFactory(new PropertyValueFactory<>("quantity"));
         priceColumn.setCellValueFactory(new PropertyValueFactory<>("price"));
 
-        updateTable(); // Cập nhật bảng khi khởi tạo
+        // Thiết lập cột Action
+        actionColumn.setCellValueFactory(param -> {
+            Button deleteButton = new Button("Delete");
+            deleteButton.setOnAction(event -> {
+                FoodItem item = param.getValue();
+                dataList.remove(item); // Xóa item khỏi danh sách
+                tableView.setItems(dataList); // Cập nhật TableView
+            });
+            return new SimpleObjectProperty<>(deleteButton);
+        });
+        updateTable();
 
+        // Thiết lập dữ liệu cho TableView
+        tableView.setItems(dataList);
 
         if (pagination != null) {
             pagination.setPageCount(PAGE_COUNT);
@@ -141,23 +170,39 @@ public class FoodController {
             System.out.println("menuButton is null. Please check the FXML file.");
         }
     }
+    private void fetchDataFromDatabase() {
+        FoodDAO foodDAO = new FoodDAO();
+        foodItems = foodDAO.getFoodItems(); // Lưu danh sách món ăn vào biến
 
+        if (!foodItems.isEmpty()) {
+            dataList.clear();
+            dataList.addAll(foodItems);
+
+            menuLabel.setText(foodItems.get(0).getName()); // Cập nhật label tên món ăn
+            menuPrice.setText(String.valueOf(foodItems.get(0).getPrice()));
+        }
+    }
     private javafx.scene.Node createPage(int pageIndex) {
         updatePage(pageIndex);
         return new javafx.scene.layout.VBox(); // Trả về một VBox rỗng
     }
     public void updateTable() {
-        tableView.getItems().clear();
-        for (FoodItem item : DataHolder.getInstance().getFoodItems()) {
-            tableView.getItems().add(item); // Thêm các món ăn vào bảng
-        }
+        dataList.clear();
+        dataList.addAll(DataHolder.getInstance().getFoodItems()); // Thêm tất cả các món ăn từ DataHolder vào bảng
+        tableView.setItems(dataList);
     }
 
 
     private void updatePage(int pageIndex) {
+        if (foodItems != null && !foodItems.isEmpty()) {
+            FoodItem firstItem = foodItems.get(0);
+            menuLabel.setText(firstItem.getName());
+        } else {
+            menuLabel.setText("No Items Found");
+        }
+
         switch (pageIndex) {
             case 0:
-                menuLabel.setText("Beefsteak: 10$");
                 menuImageView1.setImage(new Image(getClass().getResourceAsStream("/com/example/project_javafx/anhdoan/bittet.png")));
                 menuImageView2.setImage(new Image(getClass().getResourceAsStream("/com/example/project_javafx/anhdoan/bittet.png")));
                 menuImageView3.setImage(new Image(getClass().getResourceAsStream("/com/example/project_javafx/anhdoan/bittet.png")));
@@ -198,12 +243,22 @@ public class FoodController {
     @FXML
     private void addBeefsteak() {
         int quantity = beefsteakSpinner.getValue();
-        if (quantity > 0) {
-            DataHolder.getInstance().addFoodItem(new FoodItem("Beefsteak", quantity, 10.0));
+
+        // Kiểm tra xem có món nào trong foodItems không
+        if (quantity > 0 && !foodItems.isEmpty()) {
+            // Lấy tên và giá của món ăn đầu tiên từ foodItems
+            String itemName = foodItems.get(0).getName(); // Lấy tên món ăn
+            double itemPrice = foodItems.get(0).getPrice(); // Lấy giá món ăn
+
+            // Thêm món ăn vào DataHolder với tên, số lượng và giá
+            DataHolder.getInstance().addFoodItem(new FoodItem(itemName, quantity, itemPrice));
             updateTable(); // Cập nhật bảng ngay sau khi thêm món ăn
         }
-        beefsteakSpinner.getValueFactory().setValue(0);
+
+        beefsteakSpinner.getValueFactory().setValue(0); // Đặt lại giá trị của spinner về 0
     }
+
+
 
     public void deleteSelectedItem() {
         FoodItem selectedItem = tableView.getSelectionModel().getSelectedItem();

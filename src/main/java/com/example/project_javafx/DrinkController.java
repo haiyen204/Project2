@@ -1,5 +1,8 @@
 package com.example.project_javafx;
 
+import javafx.beans.property.SimpleObjectProperty;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
@@ -75,15 +78,34 @@ public class DrinkController {
     private TableColumn<FoodItem, Integer> quantityColumn;
     @FXML
     private TableColumn<FoodItem, Double> priceColumn;
+    @FXML
+    private TableColumn<FoodItem, Button> actionColumn;
+
+    private ObservableList<FoodItem> dataList = FXCollections.observableArrayList();
+
 
     @FXML
     private void initialize() {
+        // Thiết lập cột dữ liệu
         nameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
         quantityColumn.setCellValueFactory(new PropertyValueFactory<>("quantity"));
         priceColumn.setCellValueFactory(new PropertyValueFactory<>("price"));
 
-        updateTable(); // Cập nhật bảng khi khởi tạo
+        // Thiết lập cột Action
+        actionColumn.setCellValueFactory(param -> {
+            Button deleteButton = new Button("Delete");
+            deleteButton.setOnAction(event -> {
+                FoodItem item = param.getValue();
+                dataList.remove(item); // Xóa item khỏi danh sách
+                tableView.setItems(dataList); // Cập nhật TableView
+            });
+            return new SimpleObjectProperty<>(deleteButton);
+        });
 
+        updateTable();
+
+        // Thiết lập dữ liệu cho TableView
+        tableView.setItems(dataList);
 
         if (pagination != null) {
             pagination.setPageCount(PAGE_COUNT);
@@ -147,10 +169,9 @@ public class DrinkController {
         return new javafx.scene.layout.VBox(); // Trả về một VBox rỗng
     }
     public void updateTable() {
-        tableView.getItems().clear();
-        for (FoodItem item : DataHolder.getInstance().getFoodItems()) {
-            tableView.getItems().add(item); // Thêm các món ăn vào bảng
-        }
+        dataList.clear();
+        dataList.addAll(DataHolder.getInstance().getFoodItems()); // Thêm tất cả các món ăn từ DataHolder vào bảng
+        tableView.setItems(dataList);
     }
 
 
